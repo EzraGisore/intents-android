@@ -44,6 +44,10 @@ class MainActivity : AppCompatActivity() {
             val takePictureintent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(takePictureintent,1)
         }
+        btnmpesa.setOnClickListener {
+            val simToolKITIntent = applicationContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+            simToolKITIntent?.let { startActivity(it) }
+        }
 
     }
 }
